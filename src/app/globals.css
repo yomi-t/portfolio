@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #050d1a;
+  --background: #ededed;
+  /* 朱色。虎アイコンに呼応する唯一のアクセント。要所だけに差す */
+  --accent: #d64a1e;
+  /* 罫線。紙面の区切りはすべてこの濃度で統一する */
+  --rule: color-mix(in srgb, var(--foreground) 12%, transparent);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-rule: var(--rule);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-mochiy: var(--font-mochiy);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* framer-motion の useScroll がスクロールコンテナからの相対位置を測るために
+   ルートが positioned である必要がある（static だと警告が出る） */
+html {
+  position: relative;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  overflow-x: hidden;
+}
+
+@keyframes hero-drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(3%, 2%) scale(1.08); }
+}
+
+@keyframes hero-drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-2%, -3%) scale(1.05); }
+}
+
+/* 帯の中身を2セット並べた上で半分だけ動かすことで継ぎ目なくループする */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
