@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { GrainOverlay } from "./_components/GrainOverlay";
+import { Footer } from "./_components/footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +40,7 @@ export default function RootLayout({
         <GrainOverlay />
         <div className="relative z-10 flex min-h-full flex-col">
           {children}
+          <Footer />
         </div>
       </body>
     </html>

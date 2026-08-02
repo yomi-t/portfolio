@@ -28,7 +28,7 @@ export const works: Work[] = [
     {
         slug: "schedule-exporter",
         name: "Schedule Exporter",
-        description: "予定をワンタップで別形式に書き出せる連携用ユーティリティアプリ。",
+        description: "空き時間をワンタップでテキストに書き出せる連携用ユーティリティアプリ。",
         src: "/images/schedule-exporter.png",
         platform: "ios",
         url: "https://apps.apple.com/jp/app/schedule-exporter/id6781228884",
