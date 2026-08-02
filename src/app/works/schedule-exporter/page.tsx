@@ -1,6 +1,7 @@
 import { FileText } from "lucide-react";
 import { LinkButton } from "../../../components/LinkButton";
 import { WorkDetail } from "../_components/WorkDetail";
+import { ScheduleExporterHighlights } from "./_components/ScheduleExporterHighlights";
 
 export default function Page() {
     return (
@@ -17,12 +18,15 @@ export default function Page() {
                 }}
             />
             <div className="mx-auto max-w-2xl px-6 pb-20 sm:px-14 sm:pb-28">
-                <LinkButton
-                    href="/works/schedule-exporter/privacy-policy"
-                    icon={FileText}
-                >
-                    プライバシーポリシー
-                </LinkButton>
+                <ScheduleExporterHighlights />
+                <div className="mt-10">
+                    <LinkButton
+                        href="/works/schedule-exporter/privacy-policy"
+                        icon={FileText}
+                    >
+                        プライバシーポリシー
+                    </LinkButton>
+                </div>
             </div>
         </>
     );
