@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ImagePlate } from "../shared/ImagePlate";
+import { ImagePlate } from "../../../components/ImagePlate";
 
 type ActivityEntryProps = {
     /** 1始まりの連番。透かしの数字に使う */

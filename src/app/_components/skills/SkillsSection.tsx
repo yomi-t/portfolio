@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Wrench } from "lucide-react";
 import { MarqueeBand } from "./MarqueeBand";
-import { SectionShell } from "../shared/SectionShell";
+import { SectionShell } from "../../../components/SectionShell";
 import { SkillPlate } from "./SkillPlate";
 
 const skills = [

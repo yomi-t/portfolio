@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { BookOpen, Cake, GraduationCap, Mountain, Music2 } from "lucide-react";
-import { ImagePlate } from "../shared/ImagePlate";
+import { ImagePlate } from "../../../components/ImagePlate";
 
 const info = [
     { icon: GraduationCap, label: "明治大学 商学部 商学科 3年" },

@@ -7,7 +7,7 @@ import { ActivityBrief } from "./ActivityBrief";
 import { ActivityEntry } from "./ActivityEntry";
 import { AppShowcase } from "./AppShowcase";
 import { InternshipList } from "./InternshipList";
-import { SectionShell } from "../shared/SectionShell";
+import { SectionShell } from "../../../components/SectionShell";
 import { TagPills } from "./TagPills";
 
 const mentorCourses = [

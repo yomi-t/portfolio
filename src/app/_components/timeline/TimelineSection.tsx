@@ -4,7 +4,7 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { CalendarRange } from "lucide-react";
 import { useRef } from "react";
 import { internships } from "../../_data/internships";
-import { SectionShell } from "../shared/SectionShell";
+import { SectionShell } from "../../../components/SectionShell";
 import { TimelineEntry } from "./TimelineEntry";
 
 const entries = [

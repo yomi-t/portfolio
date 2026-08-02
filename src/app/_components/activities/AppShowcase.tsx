@@ -1,7 +1,7 @@
 import { ArrowRight, Globe } from "lucide-react";
 import type { Work } from "../../_data/works";
-import { LinkButton } from "../shared/LinkButton";
-import { ImagePlate } from "../shared/ImagePlate";
+import { LinkButton } from "../../../components/LinkButton";
+import { ImagePlate } from "../../../components/ImagePlate";
 
 type AppShowcaseProps = {
     apps: Work[];

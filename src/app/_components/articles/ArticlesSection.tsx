@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { PenLine } from "lucide-react";
 import { ArticleRow } from "./ArticleRow";
-import { SectionShell } from "../shared/SectionShell";
+import { SectionShell } from "../../../components/SectionShell";
 
 const articles = [
     {

@@ -1,7 +1,7 @@
 import { ArrowLeft, Globe } from "lucide-react";
 import type { Work } from "../../_data/works";
-import { ImagePlate } from "../shared/ImagePlate";
-import { LinkButton } from "../shared/LinkButton";
+import { ImagePlate } from "../../../components/ImagePlate";
+import { LinkButton } from "../../../components/LinkButton";
 
 type WorkDetailProps = {
     work: Work;
