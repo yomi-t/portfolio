@@ -4,6 +4,11 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { GrainOverlay } from "./_components/GrainOverlay";
 import { Footer } from "./_components/footer/Footer";
+import { GoogleTagManager } from "@next/third-parties/google";
+import { ClickTracker } from "./_components/analytics/ClickTracker";
+
+// GTMコンテナID（例: GTM-XXXXXXX）。未設定の環境（ローカル開発など）では計測を無効にする
+const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +42,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${mochiy.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        {gtmId && (
+          <>
+            <GoogleTagManager gtmId={gtmId} />
+            <ClickTracker />
+          </>
+        )}
         <GrainOverlay />
         <div className="relative z-10 flex min-h-full flex-col">
           {children}
