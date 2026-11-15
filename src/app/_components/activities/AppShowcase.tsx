@@ -1,4 +1,4 @@
-import { ArrowRight, Globe } from "lucide-react";
+import { ArrowRight, Download, Globe } from "lucide-react";
 import type { Work } from "../../_data/works";
 import { LinkButton } from "../../../components/LinkButton";
 import { ImagePlate } from "../../../components/ImagePlate";
@@ -15,7 +15,8 @@ export function AppShowcase({ apps, className = "" }: AppShowcaseProps) {
     return (
         <ul className={`flex max-w-lg flex-col gap-8 sm:gap-10 ${className}`}>
             {apps.map(({ slug, name, description, src, platform, url }, index) => {
-                const isWeb = platform === "web";
+                const isWeb = platform !== "ios";
+                const isMac = platform === "mac";
 
                 return (
                     <li key={slug} className="flex gap-5 sm:gap-6">
@@ -48,13 +49,19 @@ export function AppShowcase({ apps, className = "" }: AppShowcaseProps) {
                                 <LinkButton href={`/works/${slug}`} icon={ArrowRight}>
                                     詳細を見る
                                 </LinkButton>
-                                <LinkButton
-                                    href={url}
-                                    external
-                                    icon={isWeb ? Globe : "/images/apple-black-line.svg"}
-                                >
-                                    {isWeb ? "サイトを見る" : "App Storeで見る"}
-                                </LinkButton>
+                                {isMac ? (
+                                    <LinkButton href={url} icon={Download}>
+                                        ダウンロード
+                                    </LinkButton>
+                                ) : (
+                                    <LinkButton
+                                        href={url}
+                                        external
+                                        icon={isWeb ? Globe : "/images/apple-black-line.svg"}
+                                    >
+                                        {isWeb ? "サイトを見る" : "App Storeで見る"}
+                                    </LinkButton>
+                                )}
                             </div>
                         </div>
                     </li>

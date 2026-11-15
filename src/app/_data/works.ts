@@ -1,4 +1,4 @@
-export type Platform = "ios" | "web";
+export type Platform = "ios" | "web" | "mac";
 
 export type Work = {
     /** 詳細ページのURLに使う識別子 */
@@ -10,7 +10,7 @@ export type Work = {
     src?: string;
     platform: Platform;
     /**
-     * iOSはストア配布URL、Webは公開URL。
+     * iOSはストア配布URL、Webは公開URL、macは配布zipのパス。
      * TODO: 公開後に実際のURLへ差し替える
      */
     url: string;
@@ -40,5 +40,13 @@ export const works: Work[] = [
         src: "/images/scheduler.png",
         platform: "web",
         url: "https://scheduler.yomi-t.com",
+    },
+    {
+        slug: "frame-bezel",
+        name: "FrameBezelApp",
+        description: "スクショにApple公式のベゼルを合成して書き出すmacOSアプリ。",
+        src: "/images/frame-bezel-app.png",
+        platform: "mac",
+        url: "/downloads/FrameBezelApp.zip",
     },
 ];

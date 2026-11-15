@@ -50,7 +50,7 @@ export function ActivitiesSection() {
                     <InternshipList />
                 </ActivityEntry>
 
-                <ActivityEntry index={3} title="個人開発" subtitle="iOS ・ Web">
+                <ActivityEntry index={3} title="個人開発" subtitle="iOS ・ Web ・ Mac">
                     <div className="flex flex-col gap-10">
                         <div>
                             <p className="text-sm opacity-60">iOSアプリ</p>
@@ -63,6 +63,13 @@ export function ActivitiesSection() {
                             <p className="text-sm opacity-60">Webアプリ</p>
                             <AppShowcase
                                 apps={works.filter((work) => work.platform === "web")}
+                                className="mt-4"
+                            />
+                        </div>
+                        <div>
+                            <p className="text-sm opacity-60">Macアプリ</p>
+                            <AppShowcase
+                                apps={works.filter((work) => work.platform === "mac")}
                                 className="mt-4"
                             />
                         </div>
