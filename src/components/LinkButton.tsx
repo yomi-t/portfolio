@@ -6,6 +6,8 @@ type LinkButtonProps = {
     href: string;
     /** true なら新規タブで開く外部リンクとして扱う */
     external?: boolean;
+    /** true ならファイルのダウンロードリンクとして扱う（ページ遷移・先読みをさせない） */
+    download?: boolean;
     /** Lucide アイコン、または画像アイコンの src */
     icon: LucideIcon | string;
     children: React.ReactNode;
@@ -14,6 +16,7 @@ type LinkButtonProps = {
 export function LinkButton({
     href,
     external = false,
+    download = false,
     icon: Icon,
     children,
 }: LinkButtonProps) {
@@ -54,6 +57,16 @@ export function LinkButton({
                 rel="noopener noreferrer"
                 className={className}
             >
+                {content}
+            </Link>
+        );
+    }
+
+    if (download) {
+        // download 属性があると Next.js はクライアント遷移せず通常のリンクとして扱う。
+        // prefetch={false} で zip を「ページ」として先読みする無駄な通信も止める
+        return (
+            <Link href={href} download prefetch={false} className={className}>
                 {content}
             </Link>
         );

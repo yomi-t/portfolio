@@ -1,7 +1,6 @@
-import { ArrowRight, Globe } from "lucide-react";
+import { ArrowRight, Download, Globe } from "lucide-react";
 import type { Work } from "../../_data/works";
 import { LinkButton } from "../../../components/LinkButton";
-import { DownloadButton } from "../../../components/DownloadButton";
 import { ImagePlate } from "../../../components/ImagePlate";
 
 type AppShowcaseProps = {
@@ -51,9 +50,9 @@ export function AppShowcase({ apps, className = "" }: AppShowcaseProps) {
                                     詳細を見る
                                 </LinkButton>
                                 {isMac ? (
-                                    <DownloadButton href={url}>
+                                    <LinkButton download href={url} icon={Download}>
                                         ダウンロード
-                                    </DownloadButton>
+                                    </LinkButton>
                                 ) : (
                                     <LinkButton
                                         href={url}

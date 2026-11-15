@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, Download, ExternalLink } from "lucide-react";
 import { ImagePlate } from "../../../components/ImagePlate";
 import { LinkButton } from "../../../components/LinkButton";
-import { DownloadButton } from "../../../components/DownloadButton";
 
 export const metadata: Metadata = {
     title: "FrameBezelApp | スクショにApple公式ベゼルを合成するmacOSアプリ",
@@ -58,9 +57,9 @@ export default function Page() {
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-2.5">
-                    <DownloadButton href={DOWNLOAD_URL}>
+                    <LinkButton download href={DOWNLOAD_URL} icon={Download}>
                         アプリをダウンロード
-                    </DownloadButton>
+                    </LinkButton>
                     <LinkButton
                         href={APPLE_DESIGN_RESOURCES_URL}
                         external
